@@ -17,4 +17,3 @@ message = anthropic.Anthropic().messages.create(
 
 console = Console()
 console.print(Markdown(message.content[0].text))
-
