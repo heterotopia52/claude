@@ -19,4 +19,3 @@ class ClaudeClient:
         )
 
         return response.content[0].text
-    
