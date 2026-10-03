@@ -1,8 +1,16 @@
 {
     "cSpell.words": [
+        "asyncio",
+        "deleter",
         "dotenv",
+        "kwargs",
+        "linearization",
+        "metaclass",
+        "metaclasses",
+        "nonlocal",
         "pycache",
         "pytest",
-        "venv"
+        "venv",
+        "virtualenv"
     ]
 }
