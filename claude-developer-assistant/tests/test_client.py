@@ -11,7 +11,7 @@ def test_python_explanation():
     assert result.concept 
     assert result.explanation
     assert result.example
-    assert result.common_mistakes
-    
+    assert result.common_mistake
+
     
 
