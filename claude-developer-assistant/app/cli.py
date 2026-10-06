@@ -1,24 +1,20 @@
-# import anthropic
-# from dotenv import load_dotenv
-# import os
-# from rich.console import Console
-# from rich.markdown import Markdown
-
 from app.schemas import PythonExplanation
+from app.prompts import PYTHON_EXPLANATION_PROMPT
 from app.client import ClaudeClient
-
-# load_dotenv()
-# app_key = os.getenv("ANTHROPIC_API_KEY")
-
-# client = anthropic.Anthropic()
 
 
 def main():
-    client = ClaudeClient(
-        model="claude-haiku-4-5"
-        )
+    client = ClaudeClient(model="claude-haiku-4-5")
+    concept = input("Enter a Python concept: ").strip()
+
+    if not concept:
+        print("Please enter a Python concept. ").strip()
+        return
+
+    prompt = PYTHON_EXPLANATION_PROMPT.format(concept=concept)
+
     result = client.ask_structured(
-        prompt="Τι είναι οι decorators στην Python;",
+        prompt=prompt,
         output_format=PythonExplanation
     )
 
@@ -36,36 +32,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()    
-
-# load_dotenv()
-# app_key = os.getenv("ANTHROPIC_API_KEY")
-
-# client = anthropic.Anthropic()
-
-# response = client.messages.parse(
-#     model="claude-haiku-4-5",
-#     max_tokens=1000,        
-#     messages=[
-#         {
-#             "role": "user",
-#             "content": "Τι είναι οι decorators στην Python;"
-#         }
-#     ],
-#     output_format=PythonExplanation,            
-# )   
-
-# # message = anthropic.Anthropic().messages.create(
-# #     model="claude-haiku-4-5",
-# #     max_tokens=1000,
-# #     messages=[{"role": "user",
-# #                "content": "Τι είναι οι decorators στην Python;"}],
-# #     )
-
-# result = response.parsed_output
-
-# console = Console()
-
-# # console.print(Markdown(message.content[0].text))
-
-# console.print(Markdown(f"""{result.explanation}"""))
+    main()
