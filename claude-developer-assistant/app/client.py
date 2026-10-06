@@ -1,5 +1,12 @@
 import anthropic
+from dotenv import load_dotenv
+import os
 from pydantic import BaseModel
+
+load_dotenv()
+app_key = os.getenv("ANTHROPIC_API_KEY")
+
+client = anthropic.Anthropic()
 
 
 class ClaudeClient:
@@ -21,10 +28,24 @@ class ClaudeClient:
 
         return response.content[0].text
 
+    def ask_structured(
+        self,
+        prompt: str,
+        output_format: BaseModel,
+    ) -> BaseModel:
+        response = self.client.messages.parse(
+            model=self.model,
+            max_tokens=1000,
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt,
+                }
+            ],
+            output_format=output_format,
+        )
 
-class ClaudeRequest(BaseModel):
-    summary: str
-    question: str
-    issues: list[str]
-    suggestions: list[str]
-    tests: list[str]
+        return response.parsed_output
+
+
+
