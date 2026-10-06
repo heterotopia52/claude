@@ -313,10 +313,11 @@
     },
     {
         "id": 39,
-        "question": "What is a module in Python?",
+        "question": "What a module does in Python?",
         "expected_topics": [
-        "module is a file containing Python code that can be imported and used in other programs",
-        "module can contain functions, classes, and variables"]   
+            "module is a file containing Python code that can be imported and used in other programs",
+            "module can contain functions, classes, and variables"
+        ]   
     },
     {
         "id": 40,
