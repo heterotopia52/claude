@@ -1,4 +1,5 @@
 import anthropic
+from pydantic import BaseModel
 
 
 class ClaudeClient:
@@ -19,3 +20,11 @@ class ClaudeClient:
         )
 
         return response.content[0].text
+
+
+class ClaudeRequest(BaseModel):
+    summary: str
+    question: str
+    issues: list[str]
+    suggestions: list[str]
+    tests: list[str]
