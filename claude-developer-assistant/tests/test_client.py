@@ -1,19 +1,17 @@
-import anthropic
-from dotenv import load_dotenv
-import os
-from rich.console import Console
-from rich.markdown import Markdown
-
-load_dotenv()
-app_key = os.getenv("ANTHROPIC_API_KEY")
+from app.client import ClaudeClient
+from app.schemas import PythonExplanation
 
 
-message = anthropic.Anthropic().messages.create(
-    model="claude-haiku-4-5",
-    max_tokens=1000,
-    messages=[{"role": "user",
-               "content": "Πως εμφανίζουμε ´Τι είναι η Python;"}],
-)
+def test_python_explanation():
+    client = ClaudeClient(model="claude-haiku-4-5")
+    prompt = "Τι είναι οι decorators στην Python;"
+    result = client.ask_with_schema(prompt, output_format=PythonExplanation)
 
-console = Console()
-console.print(Markdown(message.content[0].text))
+    assert isinstance(result, PythonExplanation)
+    assert result.concept 
+    assert result.explanation
+    assert result.example
+    assert result.common_mistakes
+    
+    
+
