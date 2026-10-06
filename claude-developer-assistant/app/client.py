@@ -35,7 +35,7 @@ class ClaudeClient:
     ) -> BaseModel:
         response = self.client.messages.parse(
             model=self.model,
-            max_tokens=1000,
+            max_tokens=2000,
             messages=[
                 {
                     "role": "user",
