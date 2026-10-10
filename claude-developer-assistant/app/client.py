@@ -47,5 +47,3 @@ class ClaudeClient:
 
         return response.parsed_output
 
-
-
