@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "question": "What is a Python decorator?",
+    "expected_topics": ["function", "wrapper", "higher-order function"]
+  },
+  {
+    "id": 2,
+    "question": "What is the difference between a list and a tuple?",
+    "expected_topics": ["mutable", "immutable"]
+  },
+  {
+    "id": 3,
+    "question": "What is a Python generator?",
+    "expected_topics": ["yield", "lazy evaluation", "iterator"]
+  },
+  {
+    "id": 4,
+    "question": "What is a context manager in Python?",
+    "expected_topics": ["with", "__enter__", "__exit__"]
+  },
+  {
+    "id": 5,
+    "question": "What is the difference between == and is in Python?",
+    "expected_topics": ["equality", "identity"]
+  },
+  {
+    "id": 6,
+    "question": "What are *args and **kwargs?",
+    "expected_topics": ["positional arguments", "keyword arguments", "unpacking"]
+  },
+  {
+    "id": 7,
+    "question": "What is a Python exception?",
+    "expected_topics": ["error", "try", "except"]
+  },
+  {
+    "id": 8,
+    "question": "What is inheritance in Python?",
+    "expected_topics": ["class", "parent", "child"]
+  },
+  {
+    "id": 9,
+    "question": "What is a Python dataclass?",
+    "expected_topics": ["@dataclass", "attributes", "boilerplate"]
+  },
+  {
+    "id": 10,
+    "question": "What is dependency injection?",
+    "expected_topics": ["dependency", "injection", "decoupling"]
+  }
+]
