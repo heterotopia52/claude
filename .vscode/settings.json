@@ -2,8 +2,10 @@
     "cSpell.words": [
         "asyncio",
         "contextmanager",
+        "dataclass",
         "deleter",
         "dotenv",
+        "evals",
         "functools",
         "kwargs",
         "linearization",
